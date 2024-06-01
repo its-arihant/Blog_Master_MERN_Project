@@ -1,1 +1,1 @@
-# Blog Master
+# Blog Master: Redefining the blogging experience
