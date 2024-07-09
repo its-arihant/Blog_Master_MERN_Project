@@ -12,25 +12,31 @@ const postRoute=require('./routes/posts')
 const commentRoute=require('./routes/comments')
 
 
-app.use(cors(
-    {
-        origin: ["https://deploy-mern-1whq.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
+app.use(cors({
+    origin: ["https://deploy-mern-1whq.vercel.app", "http://localhost:5173"],
+    methods: ["POST", "GET"],
+    credentials: true
+}));
 
-    }
-));
 //database
-const connectDB=async()=>{
-    try{
-        await mongoose.connect(process.env.MONGO_URL)
-        console.log("database is connected successfully!")
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log("Database is connected successfully!");
+    } catch (err) {
+        console.error("Database connection error:", err);
+    }
+};
 
-    }
-    catch(err){
-        console.log(err)
-    }
-}
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error("Server error:", err);
+    res.status(500).json({ message: "Internal Server Error" });
+});
+
 
 
 
