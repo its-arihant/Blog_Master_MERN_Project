@@ -12,11 +12,11 @@ const postRoute=require('./routes/posts')
 const commentRoute=require('./routes/comments')
 
 
-app.use(cors({
-    origin: ["https://deploy-mern-1whq.vercel.app", "http://localhost:5173"],
-    methods: ["POST", "GET"],
-    credentials: true
-}));
+// app.use(cors({
+//     origin: ["https://deploy-mern-1whq.vercel.app", "http://localhost:5173"],
+//     methods: ["POST", "GET"],
+//     credentials: true
+// }));
 
 //database
 const connectDB = async () => {
