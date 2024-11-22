@@ -9,7 +9,7 @@ Blog Master is a user-friendly blogging platform designed to cater to both novic
 - Implement analytics tools to track user engagement, blog traffic, and content performance, enabling data-driven decision-making for platform improvements.
 - Continuously monitor user feedback and industry trends to adapt the platform and incorporate new features that meet evolving user needs.
 
-#Features
+# Features
 Intuitive Blog Management:
 - Create, edit, read, delete, and publish blog posts seamlessly.
 
