@@ -1,32 +1,36 @@
-
+import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <>
-<div className="mt-8 w-full bg-black px-8 md:px-[300px] flex md:flex-row flex-col space-y-6 md:space-y-0 items-start md:justify-between text-lg md:text-md py-8 ">
-       <div className="flex flex-col text-white">
-         <p>Featured Blogs</p>
-         <p>Most viewed</p>
-         <p>Readers Choice</p>
-       </div>
+    <div className="mt-8 w-full bg-black px-8 py-4 flex items-center justify-between text-sm text-white">
+      
+      {/* Social Media Icons */}
+      <div className="flex space-x-8">
+        <p className="text-xl hover:text-gray-400 cursor-pointer transition-all">
+          <FaFacebook />
+        </p>
+        <p className="text-xl hover:text-gray-400 cursor-pointer transition-all">
+          <FaTwitter />
+        </p>
+        <p className="text-xl hover:text-gray-400 cursor-pointer transition-all">
+          <FaInstagram />
+        </p>
+      </div>
+      
+      {/* Links Section with Increased Spacing */}
+      <div className="flex space-x-20">
+        <p className="text-white text-sm font-semibold hover:text-gray-400 cursor-pointer">Featured</p>
+        <p className="text-white text-sm font-semibold hover:text-gray-400 cursor-pointer">Support</p>
+        <p className="text-white text-sm font-semibold hover:text-gray-400 cursor-pointer">About</p>
+      </div>
+      
+      {/* Rights Reserved */}
+      <div className="text-sm text-gray-400">
+        &copy; {new Date().getFullYear()} Blog Master. All rights reserved.
+      </div>
 
-       <div className="flex flex-col text-white">
-         <p>Forum</p>
-         <p>Support</p>
-         <p>Recent Posts</p>
-       </div>
-
-       <div className="flex flex-col text-white">
-         <p>Privacy Policy</p>
-         <p>About Us</p>
-         <p>Terms & Conditions</p>
-         <p>Terms of Service</p>
-       </div>
     </div>
-    <p className="py-2 pb-6 text-center text-white bg-black text-lg">All rights reserved @Blog Master 2024</p>
-    </>
-    
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
