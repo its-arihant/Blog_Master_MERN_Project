@@ -172,6 +172,8 @@ const CreatePost = () => {
 
   const handleCreate = async (e) => {
     e.preventDefault();
+
+    // Check if required fields are filled
     if (!title || !desc || cats.length === 0) {
       setError('Please fill in all fields and add at least one category.');
       return;
@@ -185,27 +187,46 @@ const CreatePost = () => {
       categories: cats,
     };
 
+    console.log('Post Data:', post);  // Log post data to check if it's correct
+
+    // File upload logic
     if (file) {
       const data = new FormData();
       const filename = Date.now() + file.name;
       data.append('img', filename);
       data.append('file', file);
       post.photo = filename;
+
       try {
-        await axios.post(URL + '/api/upload', data);
+        const imgUpload = await axios.post(URL + '/api/upload', data);
+        console.log('Image upload successful:', imgUpload);
       } catch (err) {
         setError('Error uploading image. Please try again.');
+        console.log('Image upload error:', err);
         return;
       }
     }
 
     try {
+      // Post creation request
       const res = await axios.post(URL + '/api/posts/create', post, {
         withCredentials: true,
       });
+      console.log('Post creation successful:', res);  // Log successful response
+
+      // Reset error state, and form fields
+      setError('');
+      setTitle('');
+      setDesc('');
+      setCat('');
+      setCats([]);
+      setFile(null);
+
+      // Navigate to the newly created post
       navigate('/posts/post/' + res.data._id);
     } catch (err) {
       setError('Error creating post. Please try again.');
+      console.log('Post creation error:', err);  // Log error
     }
   };
 
@@ -223,6 +244,7 @@ const CreatePost = () => {
           <input
             onChange={(e) => setTitle(e.target.value)}
             type="text"
+            value={title}
             placeholder="Enter post title"
             className="px-4 py-3 rounded-md outline-none border-2 border-gray-300 focus:border-black transition-all"
           />
@@ -269,6 +291,7 @@ const CreatePost = () => {
           <textarea
             onChange={(e) => setDesc(e.target.value)}
             rows={10}
+            value={desc}
             className="px-4 py-3 rounded-md outline-none border-2 border-gray-300 focus:border-black transition-all"
             placeholder="Enter post description"
           />
