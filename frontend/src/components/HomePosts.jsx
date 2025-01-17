@@ -61,8 +61,17 @@ const HomePosts = ({ post }) => {
 
         {/* Description */}
         <p className="text-gray-600 line-clamp-3">
-          {post.desc.slice(0, 200)}... <span className="text-purple-600">Read more</span>
+          {post.desc.slice(0, 200)}
         </p>
+
+        {/* Read More Button */}
+        <div>
+          <button
+            className="mt-2 px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 focus:ring focus:ring-purple-300 focus:outline-none"
+          >
+            Read More
+          </button>
+        </div>
       </div>
     </div>
   );
