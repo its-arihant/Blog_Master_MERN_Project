@@ -187,18 +187,16 @@ const CreatePost = () => {
       categories: cats,
     };
 
-    console.log('Post Data:', post);  // Log post data to check if it's correct
-
     // File upload logic
     if (file) {
       const data = new FormData();
       const filename = Date.now() + file.name;
-      data.append('img', filename);
-      data.append('file', file);
-      post.photo = filename;
+      data.append('file', file); // Appending file to FormData
+      data.append('img', filename); // You can use this key to save the file name in the database
+      post.photo = filename; // Save filename in the post data
 
       try {
-        const imgUpload = await axios.post(URL + '/api/images', data);
+        const imgUpload = await axios.post(URL + '/api/images', data); // This is where the image is uploaded
         console.log('Image upload successful:', imgUpload);
       } catch (err) {
         setError('Error uploading image. Please try again.');
@@ -207,8 +205,8 @@ const CreatePost = () => {
       }
     }
 
+    // Post creation request
     try {
-      // Post creation request
       const res = await axios.post(URL + '/api/posts/create', post, {
         withCredentials: true,
       });
@@ -309,3 +307,4 @@ const CreatePost = () => {
 };
 
 export default CreatePost;
+
