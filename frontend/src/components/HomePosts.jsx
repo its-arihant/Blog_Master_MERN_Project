@@ -29,6 +29,56 @@
 
 // export default HomePosts;
 
+// import { IF } from "../url";
+
+// const HomePosts = ({ post }) => {
+//   return (
+//     <div className="w-full flex flex-col md:flex-row mt-8 space-y-4 md:space-y-0 md:space-x-4 hover:scale-105 transition-transform duration-300">
+//       {/* Image Section */}
+//       <div className="w-full md:w-[35%] h-[200px] flex justify-center items-center">
+//         <img
+//           src={IF + post.photo}
+//           alt={post.title}
+//           className="h-full w-full object-cover rounded-lg shadow-lg hover:opacity-90 transition duration-300"
+//         />
+//       </div>
+
+//       {/* Content Section */}
+//       <div className="flex flex-col w-full md:w-[65%] space-y-3">
+//         {/* Title */}
+//         <h1 className="text-xl font-bold text-gray-800 hover:text-purple-600 transition duration-300 line-clamp-2">
+//           {post.title}
+//         </h1>
+
+//         {/* Post Info */}
+//         <div className="flex text-sm font-semibold text-gray-500 justify-between">
+//           <p>@{post.username}</p>
+//           <div className="flex space-x-2">
+//             <p>{new Date(post.updatedAt).toDateString()}</p>
+//             <p>{new Date(post.updatedAt).toLocaleTimeString()}</p>
+//           </div>
+//         </div>
+
+//         {/* Description */}
+//         <p className="text-gray-600 line-clamp-3">
+//           {post.desc.slice(0, 200)}
+//         </p>
+
+//         {/* Read More Button */}
+//         <div>
+//           <button
+//             className="mt-2 px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 focus:ring focus:ring-purple-300 focus:outline-none"
+//           >
+//             Read More
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default HomePosts;
+
 import { IF } from "../url";
 
 const HomePosts = ({ post }) => {
@@ -67,7 +117,7 @@ const HomePosts = ({ post }) => {
         {/* Read More Button */}
         <div>
           <button
-            className="mt-2 px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 focus:ring focus:ring-purple-300 focus:outline-none"
+            className="mt-4 px-6 py-2 bg-purple-600 text-white text-sm font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 focus:ring focus:ring-purple-300 focus:outline-none"
           >
             Read More
           </button>
@@ -78,4 +128,5 @@ const HomePosts = ({ post }) => {
 };
 
 export default HomePosts;
+
 
