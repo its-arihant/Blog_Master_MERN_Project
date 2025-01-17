@@ -25,10 +25,10 @@
 
 const Loader = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <div role="status" className="animate-spin">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div role="status" className="animate-spin-slow">
         <svg
-          className="w-12 h-12 text-gray-300 fill-purple-600 md:w-16 md:h-16"
+          className="w-16 h-16 text-gray-300 fill-purple-600 md:w-24 md:h-24"
           viewBox="0 0 100 101"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -42,7 +42,7 @@ const Loader = () => {
           />
         </svg>
       </div>
-      <span className="sr-only">Loading...</span> {/* Accessibility */}
+      <span className="sr-only">Loading...</span>
     </div>
   );
 };

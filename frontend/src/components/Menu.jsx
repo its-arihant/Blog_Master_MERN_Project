@@ -82,7 +82,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="absolute top-full left-0 bg-gradient-to-r from-gray-800 to-gray-900 w-full sm:w-[240px] rounded-lg shadow-lg z-10 flex flex-col items-start p-4 sm:p-6 space-y-4">
+    <div className="absolute top-full left-0 bg-gradient-to-r from-gray-800 to-gray-900 w-full sm:w-[240px] lg:w-[280px] rounded-lg shadow-lg z-10 flex flex-col items-start p-4 sm:p-6 space-y-4">
       {!user && (
         <h3 className="text-white text-sm hover:text-gray-300 transition-all cursor-pointer">
           <Link to="/login">Login</Link>
@@ -121,3 +121,4 @@ const Menu = () => {
 };
 
 export default Menu;
+
