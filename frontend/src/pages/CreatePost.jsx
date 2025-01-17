@@ -198,7 +198,7 @@ const CreatePost = () => {
       post.photo = filename;
 
       try {
-        const imgUpload = await axios.post(URL + '/api/upload', data);
+        const imgUpload = await axios.post(URL + '/api/images', data);
         console.log('Image upload successful:', imgUpload);
       } catch (err) {
         setError('Error uploading image. Please try again.');
